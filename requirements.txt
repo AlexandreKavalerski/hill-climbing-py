@@ -1,1 +1,2 @@
 tsplib95==0.7.1
+matplotlib==3.3.0
