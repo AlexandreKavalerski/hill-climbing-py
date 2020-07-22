@@ -2,6 +2,7 @@ import copy
 import os
 import random
 import tsplib95
+from plot_graphs import plot_path
 
 
 def random_state(problem):
@@ -44,8 +45,10 @@ def index(file_name):
     best_distance, best_solution = swap_neighbours(initial_state, cities)
 
     print(initial_state)
+    plot_path(cities, initial_state, distance_initial_state, 'Estado Inicial')
     print('initial: {}'.format(distance_initial_state))
 
     print(best_solution)
+    plot_path(cities, best_solution, best_distance, 'Melhor Solução')
     print('best: {}'.format(best_distance))
     print('difference: {}'.format(distance_initial_state - best_distance))
