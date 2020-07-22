@@ -1,6 +1,6 @@
 import hill_climbing as hc
 
-file_name = 'dj38.tsp'
+file_name = 'dj38'
 
 
 def main():

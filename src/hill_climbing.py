@@ -37,7 +37,7 @@ def calc_distance_of_state(state, problem):
 
 
 def index(file_name):
-    cities = tsplib95.load(os.path.join(os.getcwd(), '../data/' + file_name))
+    cities = tsplib95.load(os.path.join(os.getcwd(), '../data/' + file_name + '.tsp'))
 
     initial_state = random_state(cities)
     distance_initial_state = calc_distance_of_state(initial_state, cities)
@@ -45,10 +45,10 @@ def index(file_name):
     best_distance, best_solution = swap_neighbours(initial_state, cities)
 
     print(initial_state)
-    plot_path(cities, initial_state, distance_initial_state, 'Estado Inicial')
+    plot_path(cities, initial_state, distance_initial_state, 'estado_inicial', file_name)
     print('initial: {}'.format(distance_initial_state))
 
     print(best_solution)
-    plot_path(cities, best_solution, best_distance, 'Melhor Solução')
+    plot_path(cities, best_solution, best_distance, 'melhor_solucao', file_name)
     print('best: {}'.format(best_distance))
     print('difference: {}'.format(distance_initial_state - best_distance))
