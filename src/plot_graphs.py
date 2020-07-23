@@ -10,7 +10,7 @@ def plot_cities(problem):
     plt.show()
 
 
-def plot_path(problem, state, distance, path_description, file_name):
+def plot_path(problem, state, distance, path_description, file_name, num_exec):
     coords = list(problem.node_coords.values())
     fig, ax = plt.subplots(2)
     ax[0].set_title('Cidades')
@@ -30,7 +30,7 @@ def plot_path(problem, state, distance, path_description, file_name):
     props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
     ax[1].text(0.05, 0.95, textstr, transform=ax[1].transAxes, fontsize=14,  # Textbox
                verticalalignment='top', bbox=props)
-    to_save = '../results/graph_{}_{}.pdf'.format(path_description, file_name)
+    to_save = '../results/graph_{}_{}_{}.pdf'.format(path_description, file_name, num_exec)
     plt.savefig(to_save, dpi=400)
     plt.tight_layout()
     plt.show()
